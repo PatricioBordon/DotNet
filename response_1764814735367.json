@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": "865d19b7-4766-40ec-a248-d0f81729cc8b",
+      "name": "EDGAR ALLAN POE"
+    },
+    {
+      "id": "14ad141d-6c19-41af-8896-b9806205b09f",
+      "name": "GABRIEL GARCIA MARQUEZ"
+    }
+  ],
+  "totalCount": 2,
+  "pageNumber": 1,
+  "pageSize": 10,
+  "totalPages": 1
+}
