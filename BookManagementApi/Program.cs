@@ -38,8 +38,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+    ?? "Data Source=/data/bookmanagement.db";
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=bookmanagement.db"));
+    options.UseSqlite(connectionString));
 
 var jwtKey = builder.Configuration["Jwt:Key"] ?? "YourSuperSecretKeyForJWTAuthentication12345";
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "BookManagementApi";
