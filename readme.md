@@ -1,23 +1,15 @@
-.NET SDK 8.0
+API de gestión de libros con .NET 8 + SQLite + JWT + Swagger
 
-Ejecutar estos comandos antes:
+## Cómo desplegar con Docker (2 comandos simples)
 
-Remove-Item -Recurse -Force BookManagementApi\bin
-Remove-Item -Recurse -Force BookManagementApi\obj
-Remove-Item -Recurse -Force BookManagementApi.Tests\bin
-Remove-Item -Recurse -Force BookManagementApi.Tests\obj
+```bash
+# 1. Construir la imagen
+docker build -t nubelity-library .
 
-docker builder prune -f
+# 2. Ejecutar el contenedor (con base de datos persistente)
+docker run -d -p 8080:8080 -v bookdb:/data --name nubelity-library nubelity-library
 
-docker build --no-cache -t bookmanagementapi .
-
-docker run -d -p 8080:8080 -v bookdb:/data --name mi-api bookmanagementapi
-
-docker logs -f mi-api
-
-Ver api en:
-
-http://localhost:8080/swagger/index.html
-
+Swagger UI: http://localhost:8080/swagger/index.html
+Credenciales de prueba:
 Usuario: admin
 Contraseña: 1234
